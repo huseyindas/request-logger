@@ -1,0 +1,82 @@
+[
+    {
+        "type": "GET",
+        "headers": {
+            "custom": "xxx",
+            "content-type": "application/json",
+            "authorization": "Bearer asdasasdadadasdad",
+            "user-agent": "PostmanRuntime/7.43.0",
+            "accept": "*/*",
+            "cache-control": "no-cache",
+            "postman-token": "dfd9115c-b0ad-4b97-9d14-13c0f9599a40",
+            "host": "localhost:8000",
+            "accept-encoding": "gzip, deflate, br",
+            "connection": "keep-alive",
+            "content-length": "34"
+        },
+        "body": null,
+        "query": {
+            "q": "deneme"
+        }
+    },
+    {
+        "type": "GET",
+        "headers": {
+            "custom": "xxx",
+            "content-type": "application/json",
+            "authorization": "Bearer asdasasdadadasdad",
+            "user-agent": "PostmanRuntime/7.43.0",
+            "accept": "*/*",
+            "cache-control": "no-cache",
+            "postman-token": "7ff7a7c2-ec8f-46be-a344-96c7c547fbca",
+            "host": "localhost:8000",
+            "accept-encoding": "gzip, deflate, br",
+            "connection": "keep-alive",
+            "content-length": "34"
+        },
+        "body": null,
+        "query": {
+            "q": "deneme"
+        }
+    },
+    {
+        "type": "POST",
+        "headers": {
+            "custom": "xxx",
+            "content-type": "application/json",
+            "authorization": "Bearer asdasasdadadasdad",
+            "user-agent": "PostmanRuntime/7.43.0",
+            "accept": "*/*",
+            "cache-control": "no-cache",
+            "postman-token": "0e1cd89c-053b-4a5f-86fb-970ca9b76213",
+            "host": "localhost:8000",
+            "accept-encoding": "gzip, deflate, br",
+            "connection": "keep-alive",
+            "content-length": "34"
+        },
+        "body": {
+            "ksmlksmdc": "lkmdflkvmdf"
+        },
+        "query": null
+    },
+    {
+        "type": "POST",
+        "headers": {
+            "custom": "xxx",
+            "content-type": "application/json",
+            "authorization": "Bearer asdasasdadadasdad",
+            "user-agent": "PostmanRuntime/7.43.0",
+            "accept": "*/*",
+            "cache-control": "no-cache",
+            "postman-token": "1ee99256-c437-4eb9-a165-2e965cbf2809",
+            "host": "localhost:8000",
+            "accept-encoding": "gzip, deflate, br",
+            "connection": "keep-alive",
+            "content-length": "34"
+        },
+        "body": {
+            "ksmlksmdc": "lkmdflkvmdf"
+        },
+        "query": null
+    }
+]

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Logger</title>
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        .log-table {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .table-header {
+            background-color: #343a40;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">Request Logger</h1>
+        <div class="log-table">
+            <table class="table table-striped table-hover">
+                <thead class="table-header">
+                    <tr>
+                        <th>#</th>
+                        <th>Type</th>
+                        <th>Headers</th>
+                        <th>Query</th>
+                        <th>Body</th>
+                    </tr>
+                </thead>
+                <tbody id="logs-table-body">
+                    <!-- Log entries will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Fetch logs and populate the table
+        async function fetchLogs() {
+            try {
+                const response = await fetch("/logs");
+                const data = await response.json();
+                const logs = data.logs;
+                const tableBody = document.getElementById("logs-table-body");
+                tableBody.innerHTML = "";
+
+                // Ters sırayla logları ekle
+                logs.slice().reverse().forEach((log, index) => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${logs.length - index}</td>
+                        <td>${log.type || "N/A"}</td>
+                        <td><pre>${JSON.stringify(log.headers, null, 2)}</pre></td>
+                        <td><pre>${JSON.stringify(log.query, null, 2)}</pre></td>
+                        <td><pre>${JSON.stringify(log.body, null, 2)}</pre></td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error("Error fetching logs:", error);
+            }
+        }
+
+        // Load logs when the page loads
+        document.addEventListener("DOMContentLoaded", fetchLogs);
+    </script>
+</body>
+</html>
