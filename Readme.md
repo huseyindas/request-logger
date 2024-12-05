@@ -2,6 +2,8 @@
 
 This project is a FastAPI application that records incoming GET and POST requests and writes them to a JSON file and presents these logs to the user via a web interface. This application is useful for visualizing and managing logs.
 
+![App Screenshot](image.png)
+
 ## Features
 
 - Receives and records GET and POST requests.
